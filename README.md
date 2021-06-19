@@ -1,2 +1,2 @@
 # tests
-React Tests
+React Tests building during the course React - The Complete Guide from ACADEMIND
