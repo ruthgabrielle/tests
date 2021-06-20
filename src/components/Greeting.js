@@ -6,4 +6,4 @@ return (
     </div>
 )
 }
-export default Greeting
+export default Greeting 
