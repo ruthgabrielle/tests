@@ -16,9 +16,7 @@ describe("Greeting Component", () => {
     });
     expect(helloWorldElement).toBeInTheDocument();
   });
-});
 
-describe("Button not clicked", () => {
   test("renders the text when the button wasn't clicked", () => {
     //arrange
     render(<Greeting />);
@@ -32,9 +30,7 @@ describe("Button not clicked", () => {
     });
     expect(initalStateElement).toBeInTheDocument();
   });
-});
 
-describe("Button was clicked", () => {
   test("renders the text after button clicked", () => {
     //arrange
     render(<Greeting />);
@@ -47,9 +43,9 @@ describe("Button was clicked", () => {
     const changedStateElement = screen.getByText("Changed");
     expect(changedStateElement).toBeInTheDocument;
   });
-});
 
-test("does not render the first 'lovely to see u' if the button was clicked", () => {
-    const outputElemet = screen.queryByText('lovely to see you', {exact: false});
+  test("does not render the first 'lovely to see u' if the button was clicked", () => {
+    const outputElemet = screen.queryByText('lovely to see you', { exact: false });
     expect(outputElemet).toBeNull;
-})
+  })
+});
