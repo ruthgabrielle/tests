@@ -4,12 +4,13 @@ import './App.css';
 function App() {
   const [color, setColor] = useState('red')
   const [enabled, setEnable] = useState(false)
+
   const newColor = color === 'red' ? 'blue' : 'red'
 
   return (
     <div >
       <button
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: enabled ? 'gray' : color }}
         onClick={() => setColor(newColor)}
         disabled={enabled}>
         Change to {newColor}
@@ -20,7 +21,7 @@ function App() {
         defaultChecked={enabled}
         aria-checked={enabled}
         onChange={() => setEnable(!enabled)} />
-        <label htmlFor="enable-button-checkbox"> disable button</label>
+      <label htmlFor="enable-button-checkbox"> disable button</label>
     </div>
   );
 }
