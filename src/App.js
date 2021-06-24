@@ -3,16 +3,24 @@ import './App.css';
 
 function App() {
   const [color, setColor] = useState('red')
-  const  newColor = color === 'red' ? 'blue' : 'red'
+  const [enabled, setEnable] = useState(false)
+  const newColor = color === 'red' ? 'blue' : 'red'
 
   return (
     <div >
-      <button 
-      style={{backgroundColor: color}}
-      onClick={ () => setColor(newColor)} >
-        Change to {newColor} 
+      <button
+        style={{ backgroundColor: color }}
+        onClick={() => setColor(newColor)}
+        disabled={enabled}>
+        Change to {newColor}
       </button>
-      </div>
+      <input
+        type="checkbox"
+        id="enable-button-checkbox"
+        defaultChecked={enabled}
+        aria-checked={enabled}
+        onChange={(e) => setEnable(e.target.checked)} />
+    </div>
   );
 }
 
