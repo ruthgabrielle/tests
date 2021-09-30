@@ -1,2 +1,2 @@
 # tests
-React Tests building during the course React - The Complete Guide from ACADEMIND
+practices for testing apps with Jest and React Testing Library!
