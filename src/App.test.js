@@ -24,7 +24,7 @@ test('button has correct initial color', () => {
 test('initial conditions', () => {
     render(<App />)
 
-    const colorButton = screen.getByRole('button', { name: 'Change to blue'});
+    const colorButton = screen.getByRole('button', { name: 'Change to blue' });
     expect(colorButton).toBeEnabled();
 
     const checkBox = screen.getByRole('checkbox');
@@ -34,12 +34,12 @@ test('initial conditions', () => {
 
 test('when checkbox enable, button should be disabled', () => {
     render(<App />)
-    
-    const colorButton = screen.getByRole('button', { name: 'Change to blue'});
-    const checkBox = screen.getByRole('checkbox', { name:  'disable button'});
+
+    const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+    const checkBox = screen.getByRole('checkbox', { name: /disable button/i });
 
     fireEvent.click(checkBox);
-    expect(colorButton).toBeDisabled;
+    expect(colorButton).toBeDisabled();
 
     fireEvent.click(checkBox);
     expect(colorButton).toBeEnabled();
@@ -48,16 +48,16 @@ test('when checkbox enable, button should be disabled', () => {
 test('clicked disabled button has gray background and reverts to blue', () => {
     render(<App />)
 
-    const colorButton = screen.getByRole('button', { name: 'Change to blue'});
-    const checkBox = screen.getByRole('checkbox', { name:  'disable button'});
+    const colorButton = screen.getByRole('button', { name: /change to blue/i });
+    const checkBox = screen.getByRole('checkbox', { name: /disable button/i });
 
     fireEvent.click(colorButton)
 
     fireEvent.click(checkBox)
-    expect(colorButton).toHaveStyle({backgroundColor: 'gray'})
+    expect(colorButton).toHaveStyle({ backgroundColor: 'gray' })
 
     fireEvent.click(checkBox)
-    expect(colorButton).toHaveStyle({backgroundColor: 'blue'})
+    expect(colorButton).toHaveStyle({ backgroundColor: 'blue' })
 
 })
 
@@ -73,4 +73,4 @@ describe('spaces before camel-case capital letters', () => {
         expect(replaceCamelWithSpaces('MediumVioletRed')).toBe('Medium Violet Red')
 
     })
-} )
+})
