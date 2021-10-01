@@ -45,7 +45,7 @@ test('when checkbox enable, button should be disabled', () => {
     expect(colorButton).toBeEnabled();
 })
 
-test('clicked disabled button has gray background and reverts to blue', () => {
+test('when checkbox disabled button has gray background and reverts to blue', () => {
     render(<App />)
 
     const colorButton = screen.getByRole('button', { name: /change to blue/i });
